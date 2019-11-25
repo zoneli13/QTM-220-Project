@@ -20,10 +20,21 @@ head(dat)
 
 dat$age2 <- dat$age^2
 dat$srvlng2 <- dat$srvlng^2
+dat$rgroup <- factor(dat$rgroup)
+prop.table(table(dat$rgroup))
+dat$rgroup
 datNOW <- dat %>%
   filter(congress == 105)
-lm.1 <- lm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote, data = datNOW)
+
+summary(datNOW)
+lm.1 <- lm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + totchi + region, data = datNOW)
 summary(lm.1)
+
+library(plm)
+plm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote,
+                    data = datNOW,
+                    index = c("totchi"), 
+                    model = "within")
 ```
 
 
