@@ -9,3 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(readr)
+library(tidyverse)
+dat <- read_csv("dat.csv")
+```
+
