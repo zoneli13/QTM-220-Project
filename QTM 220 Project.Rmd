@@ -15,3 +15,15 @@ library(tidyverse)
 dat <- read_csv("dat.csv")
 ```
 
+```{r}
+head(dat)
+
+dat$age2 <- dat$age^2
+dat$srvlng2 <- dat$srvlng^2
+datNOW <- dat %>%
+  filter(congress == 105)
+lm.1 <- lm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote, data = datNOW)
+summary(lm.1)
+```
+
+
