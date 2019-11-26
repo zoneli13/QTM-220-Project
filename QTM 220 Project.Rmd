@@ -30,6 +30,7 @@ summary(datNOW)
 lm.1 <- lm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + totchi + region, data = datNOW)
 summary(lm.1)
 
+head(datNOW)
 library(plm)
 plm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote,
                     data = datNOW,
