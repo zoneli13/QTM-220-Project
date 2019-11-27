@@ -22,7 +22,8 @@ dat$age2 <- dat$age^2
 dat$srvlng2 <- dat$srvlng^2
 dat$rgroup <- factor(dat$rgroup)
 prop.table(table(dat$rgroup))
-dat$rgroup
+levels(dat$rgroup) <- c("None", "Protestant", "Catholic", "Other Christian", "Other religion")
+dat$rgroup <- factor(dat$rgroup, levels = c("Protestant", "None", "Catholic", "Other Christian", "Other religion"))
 datNOW <- dat %>%
   filter(congress == 105)
 
