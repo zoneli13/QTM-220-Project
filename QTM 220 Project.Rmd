@@ -77,7 +77,7 @@ stargazer(lm.1, lm.2, lm.3, lm.4, lm.5, title = "Table 2—Impact of Female Chil
 ```
 
 \begin{table}[!htbp] \centering 
-  \caption{Table 2—Impact of Female Children on Legislator Voting on Women’s Issues} 
+  \caption{Replication of Table 2—Impact of Female Children on Legislator Voting on Women’s Issues} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lccccc} 
 \\[-1.8ex]\hline 
@@ -134,3 +134,64 @@ N & 430 & 434 & 434 & 434 & 433 \\
 \textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
+
+# Table 3 shenanigans
+## NOW all legislators
+```{r}
+lm_all_NOW<-lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW)
+summary(lm_all_NOW)
+```
+
+## NOW Men only
+```{r}
+lm_men_NOW <- lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW, subset=female==0)
+summary(lm_men_NOW)
+```
+
+## NOW Women only
+```{r}
+lm_women_NOW <- lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW, subset=female==1)
+summary(lm_women_NOW)
+```
+
+## NOW Dems only
+```{r}
+lm_Dem_NOW <- lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW, subset=repub==0)
+summary(lm_Dem_NOW)
+```
+
+## NOW Repubs only
+```{r}
+lm_Repub_NOW <- lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW, subset=repub==1)
+summary(lm_Repub_NOW)
+```
+
+## AAUW All
+```{r}
+lm_all_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105)
+summary(lm_all_AAUW)
+```
+
+## AAUW Men only
+```{r}
+lm_men_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105, subset = female == 0)
+summary(lm_men_AAUW)
+```
+
+## AAUW Women only
+```{r}
+lm_women_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105, subset = female == 1)
+summary(lm_women_AAUW)
+```
+
+## AAUW Dems only
+```{r}
+lm_Dem_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105, subset = repub == 0)
+summary(lm_Dem_AAUW)
+```
+
+## AAUW Repubs only
+```{r}
+lm_Repub_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105, subset = repub == 1)
+summary(lm_Repub_AAUW)
+```
