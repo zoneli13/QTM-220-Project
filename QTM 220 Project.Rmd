@@ -205,6 +205,7 @@ lm_Repub_AAUW$coefficients[2]
 \begin{tabular}{lccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
+& & \multicolumn{2}{c}{\textit{Gender}} & \multicolumn{2}{c}{\textit{Party}} \\ 
 \\[-1.8ex] Data Source & All Legislators & Men & Women & Democrats & Republicans \\ 
 \hline \\[-1.8ex] 
  NOW, 105th Congress & 2.3$^{**}$ & 2.48$^{**}$ & -1.67 & 2.93$^{*}$ & 1.28$^{*}$ \\ 
