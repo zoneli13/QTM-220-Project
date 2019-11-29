@@ -135,7 +135,7 @@ N & 430 & 434 & 434 & 434 & 433 \\
 \end{tabular} 
 \end{table}
 
-# Table 3 shenanigans
+# Table 3 Replication
 ## NOW all legislators
 ```{r}
 lm_all_NOW<-lm(nowtot~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datNOW)
@@ -195,3 +195,65 @@ summary(lm_Dem_AAUW)
 lm_Repub_AAUW <- lm(aauw~ngirls + female + white + repub + age + age2 + srvlng + srvlng2+ rgroup + demvote + factor(totchi) + factor(region),data=datAAUW105, subset = repub == 1)
 summary(lm_Repub_AAUW)
 ```
+
+## Make the table
+
+\begin{table}[!htbp] \centering 
+  \caption{Replication of Table 3—Impact of Female Children on Legislator Voting on Women’s Issues, by Legislator Gender and Party} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-6} 
+\\[-1.8ex] & NOW & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & 105th & 105th & 106th & 107th & 108th \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+\hline \\[-1.8ex] 
+ Number of female children & 2.300$^{**}$ & 2.385$^{**}$ & 1.688 & 2.421$^{**}$ & 2.250$^{*}$ \\ 
+  & (1.038) & (1.124) & (1.136) & (1.092) & (1.145) \\ 
+  & & & & & \\ 
+ Female & 10.838$^{***}$ & 9.194$^{***}$ & 10.440$^{***}$ & 7.564$^{***}$ & 6.909$^{**}$ \\ 
+  & (2.690) & (2.910) & (2.881) & (2.618) & (2.730) \\ 
+  & & & & & \\ 
+ White & 1.860 & 0.144 & 2.594 & $-$2.626 & 1.939 \\ 
+  & (3.451) & (3.676) & (3.833) & (3.150) & (3.211) \\ 
+  & & & & & \\ 
+ Republican & $-$44.903$^{***}$ & $-$60.468$^{***}$ & $-$55.927$^{***}$ & $-$63.216$^{***}$ & $-$63.932$^{***}$ \\ 
+  & (2.109) & (2.280) & (2.335) & (2.120) & (2.436) \\ 
+  & & & & & \\ 
+ Age & 0.661 & 0.854 & 2.034$^{**}$ & 1.298 & 2.300$^{***}$ \\ 
+  & (0.800) & (0.860) & (0.902) & (0.799) & (0.860) \\ 
+  & & & & & \\ 
+ Age squared & $-$0.006 & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
+  & (0.008) & (0.008) & (0.009) & (0.007) & (0.008) \\ 
+  & & & & & \\ 
+ Service Length & 0.235 & $-$0.208 & $-$0.726$^{*}$ & $-$0.100 & $-$0.139 \\ 
+  & (0.300) & (0.324) & (0.380) & (0.346) & (0.327) \\ 
+  & & & & & \\ 
+ Service length squared & $-$0.009 & 0.004 & 0.025$^{*}$ & $-$0.0002 & 0.004 \\ 
+  & (0.010) & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & & \\ 
+ No religion & 7.262 & 5.671 & 5.353 & 7.027 & $-$7.137 \\ 
+  & (7.022) & (7.606) & (7.791) & (7.176) & (7.499) \\ 
+  & & & & & \\ 
+ Catholic & $-$3.974$^{**}$ & $-$4.505$^{**}$ & $-$2.277 & $-$4.016$^{**}$ & $-$5.468$^{***}$ \\ 
+  & (1.941) & (2.091) & (2.129) & (1.987) & (2.077) \\ 
+  & & & & & \\ 
+ Other Christian & 0.769 & 3.204 & 1.690 & 1.646 & 3.874 \\ 
+  & (4.600) & (4.983) & (4.912) & (4.491) & (4.684) \\ 
+  & & & & & \\ 
+ Other religion & 10.866$^{***}$ & 9.683$^{**}$ & 11.890$^{***}$ & 10.286$^{***}$ & 3.156 \\ 
+  & (3.752) & (4.047) & (4.343) & (3.785) & (3.959) \\ 
+  & & & & & \\ 
+ Democratic vote share in district & 84.158$^{***}$ & 62.148$^{***}$ & 57.437$^{***}$ & 56.206$^{***}$ & 66.950$^{***}$ \\ 
+  & (10.869) & (11.568) & (12.018) & (9.092) & (10.889) \\ 
+  & & & & & \\ 
+\hline \\[-1.8ex] 
+N & 430 & 434 & 434 & 434 & 433 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
