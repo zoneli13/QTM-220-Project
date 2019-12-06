@@ -224,7 +224,7 @@ lm_Repub_AAUW$coefficients[2]
 # Extensions
 
 ## Ext2: Use whether ever having a female child instead of number of female children.
-```{r}
+```{r, results = 'hide'}
 lm_ext2_105 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW105)
 lm_ext2_106 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW106)
 lm_ext2_107 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW107)
@@ -234,10 +234,71 @@ summary(lm_ext2_105)
 summary(lm_ext2_106)
 summary(lm_ext2_107)
 summary(lm_ext2_108)
+stargazer(lm_ext2_105, lm_ext2_106, lm_ext2_107, lm_ext2_108)
 ```
 
+\begin{table}[!htbp] \centering 
+  \caption{Impact of Having Any Female Children on Legislator Voting on Women’s Issues} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Has Female Child & 4.400$^{*}$ & 3.252 & 2.318 & 1.609 \\ 
+  & (2.661) & (2.565) & (2.396) & (2.468) \\ 
+  & & & & \\ 
+ Female & 9.174$^{***}$ & 10.456$^{***}$ & 7.503$^{***}$ & 6.907$^{**}$ \\ 
+  & (2.918) & (2.883) & (2.631) & (2.743) \\ 
+  & & & & \\ 
+ White  & 0.035 & 2.538 & $-$2.744 & 1.794 \\ 
+  & (3.683) & (3.837) & (3.165) & (3.226) \\ 
+  & & & & \\ 
+ Republican & $-$60.542$^{***}$ & $-$56.008$^{***}$ & $-$63.410$^{***}$ & $-$63.919$^{***}$ \\ 
+  & (2.285) & (2.337) & (2.129) & (2.448) \\ 
+  & & & & \\ 
+ Age & 0.834 & 2.001$^{**}$ & 1.353$^{*}$ & 2.312$^{***}$ \\ 
+  & (0.863) & (0.903) & (0.803) & (0.864) \\ 
+  & & & & \\ 
+ Age squared & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
+  & (0.008) & (0.009) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Service Length & $-$0.239 & $-$0.748$^{*}$ & $-$0.092 & $-$0.127 \\ 
+  & (0.324) & (0.381) & (0.349) & (0.328) \\ 
+  & & & & \\ 
+ Service Length squared & 0.004 & 0.026$^{**}$ & $-$0.001 & 0.004 \\ 
+  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & \\ 
+ No Religion & 5.492 & 4.782 & 6.681 & $-$7.286 \\ 
+  & (7.626) & (7.804) & (7.221) & (7.541) \\ 
+  & & & & \\ 
+ Catholic & $-$4.613$^{**}$ & $-$2.323 & $-$3.969$^{**}$ & $-$5.356$^{**}$ \\ 
+  & (2.095) & (2.130) & (1.997) & (2.085) \\ 
+  & & & & \\ 
+ Other Christian & 3.085 & 1.336 & 1.136 & 3.422 \\ 
+  & (4.998) & (4.932) & (4.516) & (4.707) \\ 
+  & & & & \\ 
+ Other religion & 9.506$^{**}$ & 11.705$^{***}$ & 10.274$^{***}$ & 3.278 \\ 
+  & (4.059) & (4.345) & (3.805) & (3.976) \\ 
+  & & & & \\ 
+ Democrative vote share in district & 62.510$^{***}$ & 57.591$^{***}$ & 56.325$^{***}$ & 67.648$^{***}$ \\ 
+  & (11.594) & (12.025) & (9.148) & (10.962) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 434 & 434 & 434 & 433 \\ 
+R$^{2}$ & 0.839 & 0.814 & 0.864 & 0.857 \\ 
+Adjusted R$^{2}$ & 0.827 & 0.800 & 0.853 & 0.846 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
 ## Ext3: Use proportion of female children instead of number of female children
-```{r}
+```{r, results = 'hide'}
 lm_ext3_105 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW105)
 lm_ext3_106 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW106)
 lm_ext3_107 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW107)
@@ -250,7 +311,7 @@ summary(lm_ext3_108)
 ```
 
 ## Ext4: Add an interaction term between “girls” and female representatives.
-```{r}
+```{r, results = 'hide'}
 lm_ext4_105 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW105)
 lm_ext4_106 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW106)
 lm_ext4_107 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW107)
@@ -263,7 +324,7 @@ summary(lm_ext4_108)
 ```
 
 ## Ext5: Add an interaction term between “girls” and political parties.
-```{r}
+```{r, results = 'hide'}
 lm_ext5_105 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW105)
 lm_ext5_106 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW106)
 lm_ext5_107 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW107)
