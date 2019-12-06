@@ -34,7 +34,6 @@ dat$rgroup <- factor(dat$rgroup, levels = c("Protestant", "None", "Catholic", "O
 datNOW <- dat %>%
   filter(congress == 105)
 
-summary(datNOW)
 lm.1 <- lm(nowtot ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region), data = datNOW)
 summary(lm.1)
 ```
@@ -222,3 +221,56 @@ lm_Repub_AAUW$coefficients[2]
 \end{tabular} 
 \end{table}
 
+# Extensions
+
+## Ext2: Use whether ever having a female child instead of number of female children.
+```{r}
+lm_ext2_105 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW105)
+lm_ext2_106 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW106)
+lm_ext2_107 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW107)
+lm_ext2_108 <-lm(aauw ~ anygirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW108)
+
+summary(lm_ext2_105)
+summary(lm_ext2_106)
+summary(lm_ext2_107)
+summary(lm_ext2_108)
+```
+
+## Ext3: Use proportion of female children instead of number of female children
+```{r}
+lm_ext3_105 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW105)
+lm_ext3_106 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW106)
+lm_ext3_107 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW107)
+lm_ext3_108 <-lm(aauw ~ propgirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + factor(totchi) + factor(region) , data = datAAUW108)
+
+summary(lm_ext3_105)
+summary(lm_ext3_106)
+summary(lm_ext3_107)
+summary(lm_ext3_108)
+```
+
+## Ext4: Add an interaction term between “girls” and female representatives.
+```{r}
+lm_ext4_105 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW105)
+lm_ext4_106 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW106)
+lm_ext4_107 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW107)
+lm_ext4_108 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*female + factor(totchi) + factor(region) , data = datAAUW108)
+
+summary(lm_ext4_105)
+summary(lm_ext4_106)
+summary(lm_ext4_107)
+summary(lm_ext4_108)
+```
+
+## Ext5: Add an interaction term between “girls” and political parties.
+```{r}
+lm_ext5_105 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW105)
+lm_ext5_106 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW106)
+lm_ext5_107 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW107)
+lm_ext5_108 <-lm(aauw ~ ngirls + female + white + repub + age + age2 + srvlng + srvlng2 + rgroup + demvote + ngirls*repub + factor(totchi) + factor(region) , data = datAAUW108)
+
+summary(lm_ext5_105)
+summary(lm_ext5_106)
+summary(lm_ext5_107)
+summary(lm_ext5_108)
+```
