@@ -3,7 +3,407 @@ title: "220 Project"
 author: "Alex Fan"
 date: "11/25/2019"
 output: pdf_document
+fontsize: 12pt
+geometry: margin=1in
+header-includes: \usepackage{setspace,amsmath,graphicx}
 ---
+\doublespacing
+\maketitle
+
+\section{Introduction}
+
+The impact of a legislator’s personal values on how he or she votes is well explored by the literature. A legislator’s political party, constituent preferences, as well as a variety of other personal views all influence how he or she will vote. Personal values are especially important when dealing with or looking at key votes on controversial moral issues such as gun control, civil rights, and abortion. Party pressure is decreased as individual legislators vote based on their personal views and conscience. These votes are generally referred to as “free votes”. Personal characteristics of legislators such as religion, age, gender, and education are more influential when voting on “free vote” issues than the previously mentioned factors. All of these factors, personal characteristics as well as external influences can be used as predictors of how a legislator will vote. These predictors can valuable for political strategists, lobbyists, and politicians themselves as they determine the direction of the country. This information can be incredibly important in educating voters on how their representatives are voting and whether or not their lawmakers are truly reflective of their views. 
+
+One factor that has not been explored as extensively is the effect of the legislator’s children on how they vote on “free vote” issues. Previous literature has shown that legislators’ decision-making can be affected by parents, siblings, peers and neighbors. The research question posed by the author looks at whether congressional parents’ behavior is influenced by their children and if it is, what is the potential size of the children’s impact. Specifically, how would a legislator’s decision-making be affected by his or her children’s gender. The author believes that the gender of the children of lawmakers can have a significant impact on how they vote on certain issues. This hypothesis stems from  numerous studies on the effect of offspring gender on parental beliefs. Prior studies have found that this effect extends beyond simply parenting issues to politically significant topics.  
+
+\section{Data and Methodology}
+\subsection{Data}
+The author looks at the voting behavior of legislators across the 105th through 108th Congresses of the United States House of Representatives, spanning the years 1997 through 2004. Her analysis was cross-sectional due to the average age of the representative being 52 years old, meaning that the majority have put their reproductive lives behind them by the time they enter office. The author uses scores assigned by interest groups as well as voting behavior from all the votes through the four Congresses. The scores come from NOW, AAUW, and the National Right to Life Coalition (NRLC). NOW and AAUW are liberal groups primarily concerned with issues centered around women, while NRLC leans right and is focused on the topic of reproductive rights such as abortion. The NOW data, despite being only available for the 105th Congress, had the advantage of encompassing a plethora of topics, which is why the author chose to use it. NOW created their scores by looking at twenty pieces of legislation they deemed to be critical to women in the United States including, equality, economic security, women’s safety, education, lesbian rights, reproductive rights, and health. The author states that by breaking down the NOW scores, she was able to determine for which topics daughters of legislators have had an impact on voting behavior. The justification for using the AAUW data was that they had voting record scores for every Congress beginning from the 105th Congress. They only look at eight to ten pieces of legislation focusing on areas of education, equality, and abortion rights. An issue with these scores is that NOW and AAUW have liberal leanings, which may lead to biased results. This is why the author chose to include scores created by the NRLC after establishing that female children impact voting primarily through voting on reproduction rights legislation. The NRLC chooses ten to twenty pieces of legislation each Congress and scores legislators on the percentages of votes that align with their position. If one subtracts that percentage, one will get values that are close to what the liberal interest groups found. 
+
+The author mentions that there are issues with using scores provided by interests groups. For example, Interest groups only take into consideration the most controversial and polarizing votes when doing their calculations. They also only look at votes that are in their area of interest. To counter this, the author looked at the entire roll call of votes for the four Congresses to find all issues that female children influenced voting and to determine on which issues that influence was the largest. 
+
+\subsection{Equations and Interpretations}
+
+Equation one is $Y_{i} = \alpha + \beta_{1}GIRLS_{i} + \gamma_{i} + \epsilon_{i}$. This equation approximates the difference in voting behavior as a result of being a parent to a daughter versus a son. Y is the legislator’s voting record score or a dummy liberal roll call vote. GIRLS is the number of daughters the legislator parents. Gamma is a constant representing a set of fixed effects for the total number of children that at legislator has. Beta1 is a coefficient that shows the impact of having an additional daughter on the legislator’s voting behavior under the assumption that the legislator is not going to stop having children based on gender. It is important to note that the Beta1 is relative to the effect of having an additional son. The alpha is the intercept, representing a baseline index for voting on women’s issues during roll call. Epsilon is the residual error. 
+
+Equation 2 is $Y_{i} = \alpha + \beta_{1}GIRLS_{i} + \beta_{2}FEMALE_{i} +\beta_{3}RACE_{i} + \beta_{4}PARTY_{i} + \beta_{5}SERVICELENGTH_{i} + \beta_{6}(SERVICELENGTH)^{2}_{i} + \beta_{7}AGE_{i} + \beta_{8}(AGE)^{2}_{i} + \operatorname{\beta_{9}-\beta_{12}}Religion_{i} + \beta_{13}DEMPRESVOTE_{i} + \gamma_{i} +\phi_{i} + \epsilon_{i}$ is a more detailed and “complete” model of the full effect on legislator voting behavior. The betas all show the impact of the specific variable that they are associated with, for example Beta2 shows the effect of being a female legislator on voting for women’s issues while Beta7 shows the effect that an increase in one unit of age would have on voting for women’s issues. The gamma, alpha, and epsilon all represent the same thing they stood for in equation 1. The phi represents the region fixed effect. By including these additional regressors, the author reduces the amount of potential omitted variable bias.
+
+\section{Results}
+
+\begin{table}[!htbp] \centering 
+  \caption{Replication of Table 2—Impact of Female Children on Legislator Voting on Women’s Issues} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-6} 
+\\[-1.8ex] & NOW & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & 105th & 105th & 106th & 107th & 108th \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+\hline \\[-1.8ex] 
+ Number of female children & 2.300$^{**}$ & 2.385$^{**}$ & 1.688 & 2.421$^{**}$ & 2.250$^{*}$ \\ 
+  & (1.038) & (1.124) & (1.136) & (1.092) & (1.145) \\ 
+  & & & & & \\ 
+ Female & 10.838$^{***}$ & 9.194$^{***}$ & 10.440$^{***}$ & 7.564$^{***}$ & 6.909$^{**}$ \\ 
+  & (2.690) & (2.910) & (2.881) & (2.618) & (2.730) \\ 
+  & & & & & \\ 
+ White & 1.860 & 0.144 & 2.594 & $-$2.626 & 1.939 \\ 
+  & (3.451) & (3.676) & (3.833) & (3.150) & (3.211) \\ 
+  & & & & & \\ 
+ Republican & $-$44.903$^{***}$ & $-$60.468$^{***}$ & $-$55.927$^{***}$ & $-$63.216$^{***}$ & $-$63.932$^{***}$ \\ 
+  & (2.109) & (2.280) & (2.335) & (2.120) & (2.436) \\ 
+  & & & & & \\ 
+ Age & 0.661 & 0.854 & 2.034$^{**}$ & 1.298 & 2.300$^{***}$ \\ 
+  & (0.800) & (0.860) & (0.902) & (0.799) & (0.860) \\ 
+  & & & & & \\ 
+ Age squared & $-$0.006 & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
+  & (0.008) & (0.008) & (0.009) & (0.007) & (0.008) \\ 
+  & & & & & \\ 
+ Service Length & 0.235 & $-$0.208 & $-$0.726$^{*}$ & $-$0.100 & $-$0.139 \\ 
+  & (0.300) & (0.324) & (0.380) & (0.346) & (0.327) \\ 
+  & & & & & \\ 
+ Service length squared & $-$0.009 & 0.004 & 0.025$^{*}$ & $-$0.0002 & 0.004 \\ 
+  & (0.010) & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & & \\ 
+ No religion & 7.262 & 5.671 & 5.353 & 7.027 & $-$7.137 \\ 
+  & (7.022) & (7.606) & (7.791) & (7.176) & (7.499) \\ 
+  & & & & & \\ 
+ Catholic & $-$3.974$^{**}$ & $-$4.505$^{**}$ & $-$2.277 & $-$4.016$^{**}$ & $-$5.468$^{***}$ \\ 
+  & (1.941) & (2.091) & (2.129) & (1.987) & (2.077) \\ 
+  & & & & & \\ 
+ Other Christian & 0.769 & 3.204 & 1.690 & 1.646 & 3.874 \\ 
+  & (4.600) & (4.983) & (4.912) & (4.491) & (4.684) \\ 
+  & & & & & \\ 
+ Other religion & 10.866$^{***}$ & 9.683$^{**}$ & 11.890$^{***}$ & 10.286$^{***}$ & 3.156 \\ 
+  & (3.752) & (4.047) & (4.343) & (3.785) & (3.959) \\ 
+  & & & & & \\ 
+ Democratic vote share in district & 84.158$^{***}$ & 62.148$^{***}$ & 57.437$^{***}$ & 56.206$^{***}$ & 66.950$^{***}$ \\ 
+  & (10.869) & (11.568) & (12.018) & (9.092) & (10.889) \\ 
+  & & & & & \\ 
+\hline \\[-1.8ex] 
+N & 430 & 434 & 434 & 434 & 433 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+According to our replication of the author’s Table 2, the more female children a legislator has, the more likely he or she will vote on women’s issues liberally. For the NOW model, an additional daughter is associated with an increase of 2.3 in the NOW score, and this is significant at the 5% level. For the AAUW model for the 105th Congress, an additional daughter is associated with an increase of 2.38 in the AAUW score (significant at 5% level). For the AAUW model for the 106th Congress, an additional daughter is associated with an increase of 1.69 in the AAUW score, however this was not significant at the 5% level. For the AAUW model for the 107th Congress, an additional daughter is associated with an increase of 2.42 in the AAUW score (significant at 5% level). Finally, for the AAUW model for the 108th Congress, an additional daughter is associated with an increase of 2.25 in the AAUW score (significant at 5% level).
+
+\begin{table}[!htbp] \centering 
+  \caption{Replication of Table 3—Impact of Female Children on Legislator Voting on Women’s Issues, by Legislator Gender and Party} 
+  \label{} 
+  \textit{(Each cell presents the coefficient on number of daughters from a different regression)}
+\begin{tabular}{lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+& & \multicolumn{2}{c}{\textit{Gender}} & \multicolumn{2}{c}{\textit{Party}} \\ 
+\\[-1.8ex] Data Source & All Legislators & Men & Women & Democrats & Republicans \\ 
+\hline \\[-1.8ex] 
+ NOW, 105th Congress & 2.3$^{**}$ & 2.48$^{**}$ & -1.67 & 2.93$^{*}$ & 1.28$^{*}$ \\ 
+  & (1.04) & (1.09) & (5.64) & (1.6) & (1.32) \\ 
+  & [430] & [382] & [48] & [204] & [226] \\
+  & & & & & \\ 
+ AAUW, 105th Congress & 2.38$^{**}$ & 2.49$^{**}$ & -3.9 & 2.22 & 1.83 \\ 
+  & (1.12) & (1.17) & (6.41) & (1.44) & (1.56) \\ 
+  & [434] & [386] & [48] & [207] & [227] \\
+  & & & & & \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+Our replication of the author’s Table 3 shows that there may be an interactive effect at play in this relationship as well. Specifically, the effect of number of daughters on women’s issues voting record seems to primarily affect male legislators (ex. In the NOW model, an additional daughter for a male legislator is associated with an increase of 2.48 in the NOW score, significant at the 5% level). For female legislators, the effect of an additional daughter on their voting record index is actually negative (ex. -1.67 in the NOW model), but these are not statistically significant and thus indistinguishable from no effect. The interaction between number of girls and party is less clear; however, in general it seems that the effect of number of daughters is greater for Democrat legislators than for Republican legislators (ex. 2.93 for Democrat legislators vs. 1.28 for Republican legislators in the NOW model).
+
+\section{Extensions}
+
+The standard error, significance level, and estimates of current model with n girls and all the other variables are shown in table 1. In addition, adjusted R^2 for AAUW on 105th, 106th, 107th, and 108th congress were 0.828, 0.801, 0.855, 0.847. These values will be compared with those of 4 new models that we will build as an extension to the research.
+
+\subsection{A}
+
+\begin{table}[!htbp] 
+\centering 
+  \caption{Impact of Having Any Female Children on Legislator Voting on Women’s Issues} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Has Female Child & 4.400$^{*}$ & 3.252 & 2.318 & 1.609 \\ 
+  & (2.661) & (2.565) & (2.396) & (2.468) \\ 
+  & & & & \\ 
+ Female & 9.174$^{***}$ & 10.456$^{***}$ & 7.503$^{***}$ & 6.907$^{**}$ \\ 
+  & (2.918) & (2.883) & (2.631) & (2.743) \\ 
+  & & & & \\ 
+ White  & 0.035 & 2.538 & $-$2.744 & 1.794 \\ 
+  & (3.683) & (3.837) & (3.165) & (3.226) \\ 
+  & & & & \\ 
+ Republican & $-$60.542$^{***}$ & $-$56.008$^{***}$ & $-$63.410$^{***}$ & $-$63.919$^{***}$ \\ 
+  & (2.285) & (2.337) & (2.129) & (2.448) \\ 
+  & & & & \\ 
+ Age & 0.834 & 2.001$^{**}$ & 1.353$^{*}$ & 2.312$^{***}$ \\ 
+  & (0.863) & (0.903) & (0.803) & (0.864) \\ 
+  & & & & \\ 
+ Age squared & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
+  & (0.008) & (0.009) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Service Length & $-$0.239 & $-$0.748$^{*}$ & $-$0.092 & $-$0.127 \\ 
+  & (0.324) & (0.381) & (0.349) & (0.328) \\ 
+  & & & & \\ 
+ Service Length squared & 0.004 & 0.026$^{**}$ & $-$0.001 & 0.004 \\ 
+  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & \\ 
+ No Religion & 5.492 & 4.782 & 6.681 & $-$7.286 \\ 
+  & (7.626) & (7.804) & (7.221) & (7.541) \\ 
+  & & & & \\ 
+ Catholic & $-$4.613$^{**}$ & $-$2.323 & $-$3.969$^{**}$ & $-$5.356$^{**}$ \\ 
+  & (2.095) & (2.130) & (1.997) & (2.085) \\ 
+  & & & & \\ 
+ Other Christian & 3.085 & 1.336 & 1.136 & 3.422 \\ 
+  & (4.998) & (4.932) & (4.516) & (4.707) \\ 
+  & & & & \\ 
+ Other religion & 9.506$^{**}$ & 11.705$^{***}$ & 10.274$^{***}$ & 3.278 \\ 
+  & (4.059) & (4.345) & (3.805) & (3.976) \\ 
+  & & & & \\ 
+ Democrative vote share in district & 62.510$^{***}$ & 57.591$^{***}$ & 56.325$^{***}$ & 67.648$^{***}$ \\ 
+  & (11.594) & (12.025) & (9.148) & (10.962) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 434 & 434 & 434 & 433 \\ 
+R$^{2}$ & 0.839 & 0.814 & 0.864 & 0.857 \\ 
+Adjusted R$^{2}$ & 0.827 & 0.800 & 0.853 & 0.846 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+Using whether ever having a female child instead of number of female children
+The motivation for conducting this extension is the possibility that simply having a female child may capture the effect of female children on a legislator’s voting record on women’s issues. The impact on AAUW scores of whether ever having a female child were associated with 4.4003, 3.2519, 2.3178, 1.6095 increase for 105th, 106th, 107th, and 108th respectively. Only the 105th congress estimate (4.4) was significant at the 10 percent level while the rest were insignificant. The original model has 2.38, 1.69, 2.42, and 2.25 for estimates and 5, not significant, 5, and 5 percent significance levels for respective estimates. Although the estimate itself is greater than that of number of female children, given that the estimate of the number of female children was more significant at the 5 percent level, this model is not better than the original model. Standard errors are also greater which can be added that confidence intervals are also wider. Adjusted R^2 for the four congresses were 0.827, 0.8000, 0.853, 0.846. The fitness of the model doesn’t differ much, but it does decrease for all four.
+
+\subsection{B}
+
+\begin{table}[!htbp] \centering 
+  \caption{Impact of the Proportion of Female Children on Legislator Voting on Women’s Issues} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Proportion of Girls & 6.922$^{**}$ & 4.764$^{*}$ & 4.728$^{*}$ & 4.110 \\ 
+  & (2.907) & (2.847) & (2.645) & (2.749) \\ 
+  & & & & \\ 
+ Female & 9.284$^{***}$ & 10.563$^{***}$ & 7.643$^{***}$ & 6.995$^{**}$ \\ 
+  & (2.905) & (2.879) & (2.625) & (2.737) \\ 
+  & & & & \\ 
+ White & $-$0.035 & 2.389 & $-$2.737 & 1.760 \\ 
+  & (3.670) & (3.833) & (3.156) & (3.218) \\ 
+  & & & & \\ 
+ Republican & $-$60.373$^{***}$ & $-$55.879$^{***}$ & $-$63.251$^{***}$ & $-$63.936$^{***}$ \\ 
+  & (2.278) & (2.334) & (2.124) & (2.441) \\ 
+  & & & & \\ 
+ Age & 0.876 & 2.056$^{**}$ & 1.354$^{*}$ & 2.307$^{***}$ \\ 
+  & (0.859) & (0.901) & (0.800) & (0.862) \\ 
+  & & & & \\ 
+ Age squared & $-$0.007 & $-$0.019$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
+  & (0.008) & (0.008) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Service Length & $-$0.227 & $-$0.747$^{*}$ & $-$0.114 & $-$0.136 \\ 
+  & (0.323) & (0.380) & (0.347) & (0.327) \\ 
+  & & & & \\ 
+ Service Length squared & 0.004 & 0.026$^{**}$ & 0.0002 & 0.004 \\ 
+  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & \\ 
+ No religion & 5.665 & 5.135 & 6.803 & $-$7.274 \\ 
+  & (7.595) & (7.785) & (7.193) & (7.516) \\ 
+  & & & & \\ 
+ Catholic & $-$4.535$^{**}$ & $-$2.250 & $-$3.937$^{**}$ & $-$5.412$^{***}$ \\ 
+  & (2.088) & (2.127) & (1.991) & (2.081) \\ 
+  & & & & \\ 
+ Other Christian & 3.213 & 1.510 & 1.338 & 3.618 \\ 
+  & (4.976) & (4.912) & (4.498) & (4.691) \\ 
+  & & & & \\ 
+ Other religion & 9.781$^{**}$ & 11.955$^{***}$ & 10.331$^{***}$ & 3.239 \\ 
+  & (4.042) & (4.340) & (3.793) & (3.967) \\ 
+  & & & & \\ 
+ Democrative vote in district & 62.280$^{***}$ & 57.199$^{***}$ & 56.133$^{***}$ & 67.071$^{***}$ \\ 
+  & (11.551) & (12.013) & (9.116) & (10.920) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 434 & 434 & 434 & 433 \\ 
+R$^{2}$ & 0.840 & 0.815 & 0.864 & 0.858 \\ 
+Adjusted R$^{2}$ & 0.828 & 0.801 & 0.854 & 0.847 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+Using proportion of female children instead of number of female children
+Another possible way to improve the model may be accounting proportion of female children instead of number of female children. If we assume that all parents have an equal amount of interactions with each of their children with a limited time, then the impact on legislator’s voting record on women’s issues may be more accurately captured through the proportion rather than the number of female children. The estimates of propgirls were 6.922, 4.764, 4.728, 4.110 for 105th, 106th, 107th, and 108th respectively. 5, 10, 10 significance levels and not significant for the last. The original model has 2.38, 1.69, 2.42, and 2.25 for estimates and 5, not significant, 5, and 5 percent significance levels for respective estimates. Although standard errors for propgirls is higher compared to original, both models seem to be fairly good given three of the estimates are significant. Adjusted R^2 were 0.828, 0.801, 0.854, and 0.847. There is almost no difference in Adjusted R^2 except adjusted R^ for 106th congress decreases from the original model.
+
+\subsection{C}
+
+\begin{table}[!htbp] \centering 
+  \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and sex of legislator)} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Number of female children & 2.530$^{**}$ & 1.123 & 2.110$^{*}$ & 2.082$^{*}$ \\ 
+  & (1.165) & (1.180) & (1.133) & (1.193) \\ 
+  & & & & \\
+ Number of female children$*$female & $-$1.272 & 4.369$^{*}$ & 2.487 & 1.260 \\ 
+  & (2.671) & (2.547) & (2.429) & (2.476) \\ 
+  & & & & \\ 
+ Female & 10.924$^{**}$ & 4.950 & 4.886 & 5.517 \\ 
+  & (4.657) & (4.301) & (3.700) & (3.866) \\ 
+  & & & & \\ 
+ White & 0.328 & 1.994 & $-$2.975 & 1.804 \\ 
+  & (3.700) & (3.840) & (3.168) & (3.224) \\ 
+  & & & & \\ 
+ Republican & $-$60.434$^{***}$ & $-$55.997$^{***}$ & $-$63.167$^{***}$ & $-$63.955$^{***}$ \\ 
+  & (2.284) & (2.330) & (2.120) & (2.439) \\ 
+  & & & & \\ 
+ Age & 0.833 & 2.100$^{**}$ & 1.394$^{*}$ & 2.333$^{***}$ \\ 
+  & (0.862) & (0.900) & (0.804) & (0.863) \\ 
+  & & & & \\ 
+ Age squared & $-$0.006 & $-$0.019$^{**}$ & $-$0.012$^{*}$ & $-$0.021$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Service Length & $-$0.200 & $-$0.741$^{*}$ & $-$0.133 & $-$0.149 \\ 
+  & (0.324) & (0.379) & (0.347) & (0.327) \\ 
+  & & & & \\ 
+ Service Length squared & 0.003 & 0.026$^{**}$ & 0.001 & 0.005 \\ 
+  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & \\ 
+ No religion & 5.510 & 6.552 & 7.643 & $-$6.869 \\ 
+  & (7.621) & (7.803) & (7.201) & (7.525) \\ 
+  & & & & \\ 
+ Catholic & $-$4.549$^{**}$ & $-$2.136 & $-$3.856$^{*}$ & $-$5.428$^{***}$ \\ 
+  & (2.095) & (2.125) & (1.993) & (2.081) \\ 
+  & & & & \\ 
+ Other Christian & 3.132 & 1.732 & 1.819 & 3.994 \\ 
+  & (4.990) & (4.900) & (4.494) & (4.694) \\ 
+  & & & & \\ 
+ Other religion & 9.677$^{**}$ & 12.284$^{***}$ & 10.596$^{***}$ & 3.258 \\ 
+  & (4.051) & (4.338) & (3.797) & (3.968) \\ 
+  & & & & \\ 
+ Democrative vote in district & 62.512$^{***}$ & 56.569$^{***}$ & 55.796$^{***}$ & 66.884$^{***}$ \\ 
+  & (11.604) & (11.999) & (9.100) & (10.900) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 434 & 434 & 434 & 433 \\ 
+R$^{2}$ & 0.840 & 0.816 & 0.865 & 0.859 \\ 
+Adjusted R$^{2}$ & 0.827 & 0.802 & 0.855 & 0.847 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+Adding an interaction term between “girls” and female representatives
+We captured the differential effect Subsetting data between female and male representatives in Table 3. Another possible way to improve the model is controlling this differential effect by adding interaction term between girls and female representatives. Adjusted R squared were 0.827, 0.802, 0.855, and 0.847. The fitness of the model improves for 106th, 107th, and decreases for 105th. But given there are almost no difference, both models are good.
+
+Estimate for the interaction term were -1.272, 4.369, 2.487, and 1.260 for each respective congress. Each additional female child for female legislators have 1.272 lower score for AAUW in the 105th congress, while 106th, 107th, and 108th have 4.369, 2.487, and 1.260 higher score respectively for female legislators only. However, all the estimates except for 4.369, which is the estimate of the interaction term for 106th congress, were indistinguishable from 0 given p value shows that it’s insignificant.  Standard error were 2.671, 2.547, 2.429, and 2.476. 
+
+\subsection{D}
+\begin{table}[!htbp] \centering 
+  \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and party of legislator} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Number of female children & 1.028 & 0.578 & 1.600 & 1.322 \\ 
+  & (1.392) & (1.420) & (1.333) & (1.427) \\ 
+  & & & & \\ 
+ Number of female children$*$Republican & 2.652 & 2.176 & 1.729 & 1.888 \\ 
+  & (1.611) & (1.674) & (1.613) & (1.732) \\ 
+  & & & & \\ 
+ Female & 9.206$^{***}$ & 10.351$^{***}$ & 7.529$^{***}$ & 6.705$^{**}$ \\ 
+  & (2.904) & (2.880) & (2.617) & (2.736) \\ 
+  & & & & \\ 
+ White & 0.034 & 2.853 & $-$2.412 & 1.865 \\ 
+  & (3.669) & (3.835) & (3.156) & (3.211) \\ 
+  & & & & \\ 
+ Republican & $-$63.478$^{***}$ & $-$58.468$^{***}$ & $-$65.210$^{***}$ & $-$65.951$^{***}$ \\ 
+  & (2.919) & (3.044) & (2.820) & (3.059) \\ 
+  & & & & \\ 
+ Age & 0.837 & 2.061$^{**}$ & 1.292 & 2.344$^{***}$ \\ 
+  & (0.858) & (0.901) & (0.799) & (0.861) \\ 
+  & & & & \\ 
+ Age squared & $-$0.006 & $-$0.019$^{**}$ & $-$0.011 & $-$0.021$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Service Length & $-$0.168 & $-$0.717$^{*}$ & $-$0.084 & $-$0.145 \\ 
+  & (0.324) & (0.380) & (0.346) & (0.326) \\ 
+  & & & & \\ 
+ Service Length squared & 0.003 & 0.025$^{*}$ & $-$0.001 & 0.005 \\ 
+  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
+  & & & & \\ 
+ No religion & 5.842 & 4.667 & 6.469 & $-$7.562 \\ 
+  & (7.591) & (7.802) & (7.194) & (7.508) \\ 
+  & & & & \\ 
+ Catholic & $-$4.302$^{**}$ & $-$2.199 & $-$4.050$^{**}$ & $-$5.467$^{***}$ \\ 
+  & (2.090) & (2.128) & (1.987) & (2.077) \\ 
+  & & & & \\ 
+ Other Christian & 2.689 & 1.525 & 1.730 & 3.912 \\ 
+  & (4.983) & (4.910) & (4.491) & (4.683) \\ 
+  & & & & \\ 
+ Other religion & 9.815$^{**}$ & 11.757$^{***}$ & 10.143$^{***}$ & 3.203 \\ 
+  & (4.040) & (4.340) & (3.787) & (3.959) \\ 
+  & & & & \\ 
+ Democratic vote in district & 63.228$^{***}$ & 58.599$^{***}$ & 56.980$^{***}$ & 67.677$^{***}$ \\ 
+  & (11.562) & (12.041) & (9.119) & (10.907) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 434 & 434 & 434 & 433 \\ 
+R$^{2}$ & 0.841 & 0.815 & 0.865 & 0.859 \\ 
+Adjusted R$^{2}$ & 0.828 & 0.801 & 0.855 & 0.847 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+Add an interaction term between “girls” and political parties
+Similar to the previous extension, subset between democrats and republican has generated differential results in the impact of girls. Therefore, adding interaction term between girls and political parties may improve model by controlling the differential effect. Adjusted R squared were 0.828, 0.801, 0.855, and 0.847. The fitness of the model are exactly the same for both models. Therefore, both models are good to be used.
+
+Estimate for the interaction term were 2.652, 2.176, 1.729, and 1.888 for each respective congress. Each additional female child for republican legislator have higher AAUW score by according estimates. However, these estimates are not distinguishable from 0 given its significance is beyond 10 percent level.
+
+Moreover, we can see that the coefficient of the interactive attribute is 2.65 in the 105th Congress, 2.18 in the 106th, 1.73 in the 107th, and 1.89 in the 108th. It means that the republic legislator is scored 2.65 higher in AAUW in 105th Congress when having each additional female children. And the AAUW score is 2.18, 1.73, and 1.89 higher for female legislator who has one additional female child in 106th, 107th, and 108th Congress respectively. No effects on democratic legislator. All four voting scores assigned by AAUW have a standard error around 1.6 unit, which means the standard distance between the observations and the regression line is around 1.6 units of the Legislator's voting score.
+
+\section{Summary}
+
+The gender of a child should and is considered random. There exists no way for these legislators to actively impact the sex of a child prior to conception or birth (artificial fertilization technology was not developed until after these legislators passed their age of fertility). The author does mention that it could be possible that some legislators follow a fertility-stopping rule, which is when parents decide to stop having children based on the gender of said children. A fertility-stopping rule still would not affect the randomness of a child’s gender. It would only affect the proportion of female children that a legislator parent. This could still affect the models, but the author indicates that the legislators were not using any fertility-stopping rules. The only way that the child’s gender would be considered nonrandom would be if that child was adopted, since in that case, a child could be selected based on gender. The author does not mention any legislators that adopted, however. 
+
+A possible omitted variable that could lead to potential bias is the age of the eldest female child. A parent of a female that is eighteen years of age may have a different opinion on certain issues than a parent of a six year old (for example, abortion issues may be more salient to a parent with an older female child). The age of the eldest female child could also correlate with the total number of female children, because legislators with older eldest female child would (on average) be older and have more children. Because of this, legislators who are older and more experienced parents may vote differently than new parents. Another possible omitted variable would be access to contraceptives in their district. This would be positively correlated with voting liberally on women’s issues because a legislator would be more in favor of them given more exposure, and it could potentially be negatively correlated with the total number of children and consequently number of female children. 
+
+Theoretically, the most internally valid methodology would be to randomly assign legislators to have an additional daughter or son through in vitro fertilization, this way making the treatment perfectly exogenous. However, given the infeasibility of that method, the best way for the author to draw stronger causal inference is to continue controlling for observable characteristics in the regression. Possible additional controls to include would be the age of the eldest female child and access to contraceptives for reasons stated above. This would help control for omitted variable bias and help balance the data on observables (and hopefully unobservables too).
+
+\pagebreak
+
+\section{Appendix}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE)
@@ -75,64 +475,7 @@ summary(lm.5)
 stargazer(lm.1, lm.2, lm.3, lm.4, lm.5, title = "Table 2—Impact of Female Children on Legislator Voting on Women’s Issues")
 ```
 
-\begin{table}[!htbp] \centering 
-  \caption{Replication of Table 2—Impact of Female Children on Legislator Voting on Women’s Issues} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-6} 
-\\[-1.8ex] & NOW & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & 105th & 105th & 106th & 107th & 108th \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
-\hline \\[-1.8ex] 
- Number of female children & 2.300$^{**}$ & 2.385$^{**}$ & 1.688 & 2.421$^{**}$ & 2.250$^{*}$ \\ 
-  & (1.038) & (1.124) & (1.136) & (1.092) & (1.145) \\ 
-  & & & & & \\ 
- Female & 10.838$^{***}$ & 9.194$^{***}$ & 10.440$^{***}$ & 7.564$^{***}$ & 6.909$^{**}$ \\ 
-  & (2.690) & (2.910) & (2.881) & (2.618) & (2.730) \\ 
-  & & & & & \\ 
- White & 1.860 & 0.144 & 2.594 & $-$2.626 & 1.939 \\ 
-  & (3.451) & (3.676) & (3.833) & (3.150) & (3.211) \\ 
-  & & & & & \\ 
- Republican & $-$44.903$^{***}$ & $-$60.468$^{***}$ & $-$55.927$^{***}$ & $-$63.216$^{***}$ & $-$63.932$^{***}$ \\ 
-  & (2.109) & (2.280) & (2.335) & (2.120) & (2.436) \\ 
-  & & & & & \\ 
- Age & 0.661 & 0.854 & 2.034$^{**}$ & 1.298 & 2.300$^{***}$ \\ 
-  & (0.800) & (0.860) & (0.902) & (0.799) & (0.860) \\ 
-  & & & & & \\ 
- Age squared & $-$0.006 & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
-  & (0.008) & (0.008) & (0.009) & (0.007) & (0.008) \\ 
-  & & & & & \\ 
- Service Length & 0.235 & $-$0.208 & $-$0.726$^{*}$ & $-$0.100 & $-$0.139 \\ 
-  & (0.300) & (0.324) & (0.380) & (0.346) & (0.327) \\ 
-  & & & & & \\ 
- Service length squared & $-$0.009 & 0.004 & 0.025$^{*}$ & $-$0.0002 & 0.004 \\ 
-  & (0.010) & (0.011) & (0.013) & (0.011) & (0.010) \\ 
-  & & & & & \\ 
- No religion & 7.262 & 5.671 & 5.353 & 7.027 & $-$7.137 \\ 
-  & (7.022) & (7.606) & (7.791) & (7.176) & (7.499) \\ 
-  & & & & & \\ 
- Catholic & $-$3.974$^{**}$ & $-$4.505$^{**}$ & $-$2.277 & $-$4.016$^{**}$ & $-$5.468$^{***}$ \\ 
-  & (1.941) & (2.091) & (2.129) & (1.987) & (2.077) \\ 
-  & & & & & \\ 
- Other Christian & 0.769 & 3.204 & 1.690 & 1.646 & 3.874 \\ 
-  & (4.600) & (4.983) & (4.912) & (4.491) & (4.684) \\ 
-  & & & & & \\ 
- Other religion & 10.866$^{***}$ & 9.683$^{**}$ & 11.890$^{***}$ & 10.286$^{***}$ & 3.156 \\ 
-  & (3.752) & (4.047) & (4.343) & (3.785) & (3.959) \\ 
-  & & & & & \\ 
- Democratic vote share in district & 84.158$^{***}$ & 62.148$^{***}$ & 57.437$^{***}$ & 56.206$^{***}$ & 66.950$^{***}$ \\ 
-  & (10.869) & (11.568) & (12.018) & (9.092) & (10.889) \\ 
-  & & & & & \\ 
-\hline \\[-1.8ex] 
-N & 430 & 434 & 434 & 434 & 433 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
+
 
 # Table 3 Replication
 ## NOW all legislators
@@ -197,29 +540,7 @@ lm_Repub_AAUW$coefficients[2]
 
 ## Make the table
 
-\begin{table}[!htbp] \centering 
-  \caption{Replication of Table 3—Impact of Female Children on Legislator Voting on Women’s Issues, by Legislator Gender and Party} 
-  \label{} 
-  \textit{(Each cell presents the coefficient on number of daughters from a different regression)}
-\begin{tabular}{lccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
-& & \multicolumn{2}{c}{\textit{Gender}} & \multicolumn{2}{c}{\textit{Party}} \\ 
-\\[-1.8ex] Data Source & All Legislators & Men & Women & Democrats & Republicans \\ 
-\hline \\[-1.8ex] 
- NOW, 105th Congress & 2.3$^{**}$ & 2.48$^{**}$ & -1.67 & 2.93$^{*}$ & 1.28$^{*}$ \\ 
-  & (1.04) & (1.09) & (5.64) & (1.6) & (1.32) \\ 
-  & [430] & [382] & [48] & [204] & [226] \\
-  & & & & & \\ 
- AAUW, 105th Congress & 2.38$^{**}$ & 2.49$^{**}$ & -3.9 & 2.22 & 1.83 \\ 
-  & (1.12) & (1.17) & (6.41) & (1.44) & (1.56) \\ 
-  & [434] & [386] & [48] & [207] & [227] \\
-  & & & & & \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
+
 
 # Extensions
 
@@ -237,65 +558,7 @@ summary(lm_ext2_108)
 stargazer(lm_ext2_105, lm_ext2_106, lm_ext2_107, lm_ext2_108)
 ```
 
-\begin{table}[!htbp] \centering 
-  \caption{Impact of Having Any Female Children on Legislator Voting on Women’s Issues} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
- Has Female Child & 4.400$^{*}$ & 3.252 & 2.318 & 1.609 \\ 
-  & (2.661) & (2.565) & (2.396) & (2.468) \\ 
-  & & & & \\ 
- Female & 9.174$^{***}$ & 10.456$^{***}$ & 7.503$^{***}$ & 6.907$^{**}$ \\ 
-  & (2.918) & (2.883) & (2.631) & (2.743) \\ 
-  & & & & \\ 
- White  & 0.035 & 2.538 & $-$2.744 & 1.794 \\ 
-  & (3.683) & (3.837) & (3.165) & (3.226) \\ 
-  & & & & \\ 
- Republican & $-$60.542$^{***}$ & $-$56.008$^{***}$ & $-$63.410$^{***}$ & $-$63.919$^{***}$ \\ 
-  & (2.285) & (2.337) & (2.129) & (2.448) \\ 
-  & & & & \\ 
- Age & 0.834 & 2.001$^{**}$ & 1.353$^{*}$ & 2.312$^{***}$ \\ 
-  & (0.863) & (0.903) & (0.803) & (0.864) \\ 
-  & & & & \\ 
- Age squared & $-$0.006 & $-$0.018$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
-  & (0.008) & (0.009) & (0.007) & (0.008) \\ 
-  & & & & \\ 
- Service Length & $-$0.239 & $-$0.748$^{*}$ & $-$0.092 & $-$0.127 \\ 
-  & (0.324) & (0.381) & (0.349) & (0.328) \\ 
-  & & & & \\ 
- Service Length squared & 0.004 & 0.026$^{**}$ & $-$0.001 & 0.004 \\ 
-  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
-  & & & & \\ 
- No Religion & 5.492 & 4.782 & 6.681 & $-$7.286 \\ 
-  & (7.626) & (7.804) & (7.221) & (7.541) \\ 
-  & & & & \\ 
- Catholic & $-$4.613$^{**}$ & $-$2.323 & $-$3.969$^{**}$ & $-$5.356$^{**}$ \\ 
-  & (2.095) & (2.130) & (1.997) & (2.085) \\ 
-  & & & & \\ 
- Other Christian & 3.085 & 1.336 & 1.136 & 3.422 \\ 
-  & (4.998) & (4.932) & (4.516) & (4.707) \\ 
-  & & & & \\ 
- Other religion & 9.506$^{**}$ & 11.705$^{***}$ & 10.274$^{***}$ & 3.278 \\ 
-  & (4.059) & (4.345) & (3.805) & (3.976) \\ 
-  & & & & \\ 
- Democrative vote share in district & 62.510$^{***}$ & 57.591$^{***}$ & 56.325$^{***}$ & 67.648$^{***}$ \\ 
-  & (11.594) & (12.025) & (9.148) & (10.962) \\ 
-  & & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 434 & 434 & 434 & 433 \\ 
-R$^{2}$ & 0.839 & 0.814 & 0.864 & 0.857 \\ 
-Adjusted R$^{2}$ & 0.827 & 0.800 & 0.853 & 0.846 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
+ 
 
 ## Ext3: Use proportion of female children instead of number of female children
 ```{r, results = 'hide'}
@@ -311,65 +574,6 @@ summary(lm_ext3_108)
 stargazer(lm_ext3_105, lm_ext3_106, lm_ext3_107, lm_ext3_108)
 ```
 
-\begin{table}[!htbp] \centering 
-  \caption{Impact of the Proportion of Female Children on Legislator Voting on Women’s Issues} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
- Proportion of Girls & 6.922$^{**}$ & 4.764$^{*}$ & 4.728$^{*}$ & 4.110 \\ 
-  & (2.907) & (2.847) & (2.645) & (2.749) \\ 
-  & & & & \\ 
- Female & 9.284$^{***}$ & 10.563$^{***}$ & 7.643$^{***}$ & 6.995$^{**}$ \\ 
-  & (2.905) & (2.879) & (2.625) & (2.737) \\ 
-  & & & & \\ 
- White & $-$0.035 & 2.389 & $-$2.737 & 1.760 \\ 
-  & (3.670) & (3.833) & (3.156) & (3.218) \\ 
-  & & & & \\ 
- Republican & $-$60.373$^{***}$ & $-$55.879$^{***}$ & $-$63.251$^{***}$ & $-$63.936$^{***}$ \\ 
-  & (2.278) & (2.334) & (2.124) & (2.441) \\ 
-  & & & & \\ 
- Age & 0.876 & 2.056$^{**}$ & 1.354$^{*}$ & 2.307$^{***}$ \\ 
-  & (0.859) & (0.901) & (0.800) & (0.862) \\ 
-  & & & & \\ 
- Age squared & $-$0.007 & $-$0.019$^{**}$ & $-$0.012 & $-$0.021$^{**}$ \\ 
-  & (0.008) & (0.008) & (0.007) & (0.008) \\ 
-  & & & & \\ 
- Service Length & $-$0.227 & $-$0.747$^{*}$ & $-$0.114 & $-$0.136 \\ 
-  & (0.323) & (0.380) & (0.347) & (0.327) \\ 
-  & & & & \\ 
- Service Length squared & 0.004 & 0.026$^{**}$ & 0.0002 & 0.004 \\ 
-  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
-  & & & & \\ 
- No religion & 5.665 & 5.135 & 6.803 & $-$7.274 \\ 
-  & (7.595) & (7.785) & (7.193) & (7.516) \\ 
-  & & & & \\ 
- Catholic & $-$4.535$^{**}$ & $-$2.250 & $-$3.937$^{**}$ & $-$5.412$^{***}$ \\ 
-  & (2.088) & (2.127) & (1.991) & (2.081) \\ 
-  & & & & \\ 
- Other Christian & 3.213 & 1.510 & 1.338 & 3.618 \\ 
-  & (4.976) & (4.912) & (4.498) & (4.691) \\ 
-  & & & & \\ 
- Other religion & 9.781$^{**}$ & 11.955$^{***}$ & 10.331$^{***}$ & 3.239 \\ 
-  & (4.042) & (4.340) & (3.793) & (3.967) \\ 
-  & & & & \\ 
- Democrative vote in district & 62.280$^{***}$ & 57.199$^{***}$ & 56.133$^{***}$ & 67.071$^{***}$ \\ 
-  & (11.551) & (12.013) & (9.116) & (10.920) \\ 
-  & & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 434 & 434 & 434 & 433 \\ 
-R$^{2}$ & 0.840 & 0.815 & 0.864 & 0.858 \\ 
-Adjusted R$^{2}$ & 0.828 & 0.801 & 0.854 & 0.847 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
 
 ## Ext4: Add an interaction term between “girls” and female representatives.
 ```{r, results = 'hide'}
@@ -385,68 +589,7 @@ summary(lm_ext4_108)
 stargazer(lm_ext4_105, lm_ext4_106, lm_ext4_107, lm_ext4_108)
 ```
 
-\begin{table}[!htbp] \centering 
-  \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and sex of legislator)} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
- Number of female children & 2.530$^{**}$ & 1.123 & 2.110$^{*}$ & 2.082$^{*}$ \\ 
-  & (1.165) & (1.180) & (1.133) & (1.193) \\ 
-  & & & & \\
- Number of female children$*$female & $-$1.272 & 4.369$^{*}$ & 2.487 & 1.260 \\ 
-  & (2.671) & (2.547) & (2.429) & (2.476) \\ 
-  & & & & \\ 
- Female & 10.924$^{**}$ & 4.950 & 4.886 & 5.517 \\ 
-  & (4.657) & (4.301) & (3.700) & (3.866) \\ 
-  & & & & \\ 
- White & 0.328 & 1.994 & $-$2.975 & 1.804 \\ 
-  & (3.700) & (3.840) & (3.168) & (3.224) \\ 
-  & & & & \\ 
- Republican & $-$60.434$^{***}$ & $-$55.997$^{***}$ & $-$63.167$^{***}$ & $-$63.955$^{***}$ \\ 
-  & (2.284) & (2.330) & (2.120) & (2.439) \\ 
-  & & & & \\ 
- Age & 0.833 & 2.100$^{**}$ & 1.394$^{*}$ & 2.333$^{***}$ \\ 
-  & (0.862) & (0.900) & (0.804) & (0.863) \\ 
-  & & & & \\ 
- Age squared & $-$0.006 & $-$0.019$^{**}$ & $-$0.012$^{*}$ & $-$0.021$^{***}$ \\ 
-  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
-  & & & & \\ 
- Service Length & $-$0.200 & $-$0.741$^{*}$ & $-$0.133 & $-$0.149 \\ 
-  & (0.324) & (0.379) & (0.347) & (0.327) \\ 
-  & & & & \\ 
- Service Length squared & 0.003 & 0.026$^{**}$ & 0.001 & 0.005 \\ 
-  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
-  & & & & \\ 
- No religion & 5.510 & 6.552 & 7.643 & $-$6.869 \\ 
-  & (7.621) & (7.803) & (7.201) & (7.525) \\ 
-  & & & & \\ 
- Catholic & $-$4.549$^{**}$ & $-$2.136 & $-$3.856$^{*}$ & $-$5.428$^{***}$ \\ 
-  & (2.095) & (2.125) & (1.993) & (2.081) \\ 
-  & & & & \\ 
- Other Christian & 3.132 & 1.732 & 1.819 & 3.994 \\ 
-  & (4.990) & (4.900) & (4.494) & (4.694) \\ 
-  & & & & \\ 
- Other religion & 9.677$^{**}$ & 12.284$^{***}$ & 10.596$^{***}$ & 3.258 \\ 
-  & (4.051) & (4.338) & (3.797) & (3.968) \\ 
-  & & & & \\ 
- Democrative vote in district & 62.512$^{***}$ & 56.569$^{***}$ & 55.796$^{***}$ & 66.884$^{***}$ \\ 
-  & (11.604) & (11.999) & (9.100) & (10.900) \\ 
-  & & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 434 & 434 & 434 & 433 \\ 
-R$^{2}$ & 0.840 & 0.816 & 0.865 & 0.859 \\ 
-Adjusted R$^{2}$ & 0.827 & 0.802 & 0.855 & 0.847 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
+
 
 ## Ext5: Add an interaction term between “girls” and political parties.
 ```{r, results = 'hide'}
@@ -462,65 +605,4 @@ summary(lm_ext5_108)
 stargazer(lm_ext5_105, lm_ext5_106, lm_ext5_107, lm_ext5_108)
 ```
 
-\begin{table}[!htbp] \centering 
-  \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and party of legislator} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
- Number of female children & 1.028 & 0.578 & 1.600 & 1.322 \\ 
-  & (1.392) & (1.420) & (1.333) & (1.427) \\ 
-  & & & & \\ 
- Number of female children$*$Republican & 2.652 & 2.176 & 1.729 & 1.888 \\ 
-  & (1.611) & (1.674) & (1.613) & (1.732) \\ 
-  & & & & \\ 
- Female & 9.206$^{***}$ & 10.351$^{***}$ & 7.529$^{***}$ & 6.705$^{**}$ \\ 
-  & (2.904) & (2.880) & (2.617) & (2.736) \\ 
-  & & & & \\ 
- White & 0.034 & 2.853 & $-$2.412 & 1.865 \\ 
-  & (3.669) & (3.835) & (3.156) & (3.211) \\ 
-  & & & & \\ 
- Republican & $-$63.478$^{***}$ & $-$58.468$^{***}$ & $-$65.210$^{***}$ & $-$65.951$^{***}$ \\ 
-  & (2.919) & (3.044) & (2.820) & (3.059) \\ 
-  & & & & \\ 
- Age & 0.837 & 2.061$^{**}$ & 1.292 & 2.344$^{***}$ \\ 
-  & (0.858) & (0.901) & (0.799) & (0.861) \\ 
-  & & & & \\ 
- Age squared & $-$0.006 & $-$0.019$^{**}$ & $-$0.011 & $-$0.021$^{***}$ \\ 
-  & (0.008) & (0.008) & (0.007) & (0.008) \\ 
-  & & & & \\ 
- Service Length & $-$0.168 & $-$0.717$^{*}$ & $-$0.084 & $-$0.145 \\ 
-  & (0.324) & (0.380) & (0.346) & (0.326) \\ 
-  & & & & \\ 
- Service Length squared & 0.003 & 0.025$^{*}$ & $-$0.001 & 0.005 \\ 
-  & (0.011) & (0.013) & (0.011) & (0.010) \\ 
-  & & & & \\ 
- No religion & 5.842 & 4.667 & 6.469 & $-$7.562 \\ 
-  & (7.591) & (7.802) & (7.194) & (7.508) \\ 
-  & & & & \\ 
- Catholic & $-$4.302$^{**}$ & $-$2.199 & $-$4.050$^{**}$ & $-$5.467$^{***}$ \\ 
-  & (2.090) & (2.128) & (1.987) & (2.077) \\ 
-  & & & & \\ 
- Other Christian & 2.689 & 1.525 & 1.730 & 3.912 \\ 
-  & (4.983) & (4.910) & (4.491) & (4.683) \\ 
-  & & & & \\ 
- Other religion & 9.815$^{**}$ & 11.757$^{***}$ & 10.143$^{***}$ & 3.203 \\ 
-  & (4.040) & (4.340) & (3.787) & (3.959) \\ 
-  & & & & \\ 
- Democratic vote in district & 63.228$^{***}$ & 58.599$^{***}$ & 56.980$^{***}$ & 67.677$^{***}$ \\ 
-  & (11.562) & (12.041) & (9.119) & (10.907) \\ 
-  & & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 434 & 434 & 434 & 433 \\ 
-R$^{2}$ & 0.841 & 0.815 & 0.865 & 0.859 \\ 
-Adjusted R$^{2}$ & 0.828 & 0.801 & 0.855 & 0.847 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
+
