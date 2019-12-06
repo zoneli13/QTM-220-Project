@@ -33,7 +33,7 @@ Equation 2 is $Y_{i} = \alpha + \beta_{1}GIRLS_{i} + \beta_{2}FEMALE_{i} +\beta_
 \begin{table}[!htbp] \centering 
   \caption{Replication of Table 2—Impact of Female Children on Legislator Voting on Women’s Issues} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
  & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
@@ -86,7 +86,7 @@ N & 430 & 434 & 434 & 434 & 433 \\
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}}
 \end{table}
 
 According to our replication of the author’s Table 2, the more female children a legislator has, the more likely he or she will vote on women’s issues liberally. For the NOW model, an additional daughter is associated with an increase of 2.3 in the NOW score, and this is significant at the 5% level. For the AAUW model for the 105th Congress, an additional daughter is associated with an increase of 2.38 in the AAUW score (significant at 5% level). For the AAUW model for the 106th Congress, an additional daughter is associated with an increase of 1.69 in the AAUW score, however this was not significant at the 5% level. For the AAUW model for the 107th Congress, an additional daughter is associated with an increase of 2.42 in the AAUW score (significant at 5% level). Finally, for the AAUW model for the 108th Congress, an additional daughter is associated with an increase of 2.25 in the AAUW score (significant at 5% level).
@@ -95,7 +95,7 @@ According to our replication of the author’s Table 2, the more female children
   \caption{Replication of Table 3—Impact of Female Children on Legislator Voting on Women’s Issues, by Legislator Gender and Party} 
   \label{} 
   \textit{(Each cell presents the coefficient on number of daughters from a different regression)}
-\begin{tabular}{lccccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{lccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
 & & \multicolumn{2}{c}{\textit{Gender}} & \multicolumn{2}{c}{\textit{Party}} \\ 
@@ -112,7 +112,7 @@ According to our replication of the author’s Table 2, the more female children
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}}
 \end{table}
 
 Our replication of the author’s Table 3 shows that there may be an interactive effect at play in this relationship as well. Specifically, the effect of number of daughters on women’s issues voting record seems to primarily affect male legislators (ex. In the NOW model, an additional daughter for a male legislator is associated with an increase of 2.48 in the NOW score, significant at the 5% level). For female legislators, the effect of an additional daughter on their voting record index is actually negative (ex. -1.67 in the NOW model), but these are not statistically significant and thus indistinguishable from no effect. The interaction between number of girls and party is less clear; however, in general it seems that the effect of number of daughters is greater for Democrat legislators than for Republican legislators (ex. 2.93 for Democrat legislators vs. 1.28 for Republican legislators in the NOW model).
@@ -127,13 +127,10 @@ The standard error, significance level, and estimates of current model with n gi
 \centering 
   \caption{Impact of Having Any Female Children on Legislator Voting on Women’s Issues} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
 \\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
 \\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\\[-1.8ex] & 105th & 106th & 107th & 108th\\ 
 \hline \\[-1.8ex] 
  Has Female Child & 4.400$^{*}$ & 3.252 & 2.318 & 1.609 \\ 
   & (2.661) & (2.565) & (2.396) & (2.468) \\ 
@@ -181,7 +178,7 @@ Adjusted R$^{2}$ & 0.827 & 0.800 & 0.853 & 0.846 \\
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}}
 \end{table}
 
 Using whether ever having a female child instead of number of female children
@@ -192,14 +189,11 @@ The motivation for conducting this extension is the possibility that simply havi
 \begin{table}[!htbp] \centering 
   \caption{Impact of the Proportion of Female Children on Legislator Voting on Women’s Issues} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
 \\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
 \\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
+\\[-1.8ex] & 105th & 106th & 107th & 108th\\ 
+\hline \\[-1.8ex]  
  Proportion of Girls & 6.922$^{**}$ & 4.764$^{*}$ & 4.728$^{*}$ & 4.110 \\ 
   & (2.907) & (2.847) & (2.645) & (2.749) \\ 
   & & & & \\ 
@@ -246,7 +240,7 @@ Adjusted R$^{2}$ & 0.828 & 0.801 & 0.854 & 0.847 \\
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}}
 \end{table} 
 
 Using proportion of female children instead of number of female children
@@ -257,14 +251,11 @@ Another possible way to improve the model may be accounting proportion of female
 \begin{table}[!htbp] \centering 
   \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and sex of legislator)} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
 \\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
 \\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
+\\[-1.8ex] & 105th & 106th & 107th & 108th\\ 
+\hline \\[-1.8ex]  
  Number of female children & 2.530$^{**}$ & 1.123 & 2.110$^{*}$ & 2.082$^{*}$ \\ 
   & (1.165) & (1.180) & (1.133) & (1.193) \\ 
   & & & & \\
@@ -314,7 +305,7 @@ Adjusted R$^{2}$ & 0.827 & 0.802 & 0.855 & 0.847 \\
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}}
 \end{table} 
 
 Adding an interaction term between “girls” and female representatives
@@ -326,13 +317,10 @@ Estimate for the interaction term were -1.272, 4.369, 2.487, and 1.260 for each 
 \begin{table}[!htbp] \centering 
   \caption{Impact of Number of Female Children on Legislator's Women's Issues Voting Record (including interaction b/w number of female children and party of legislator} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\resizebox{\textwidth}{!}{\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
 \\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
 \\[-1.8ex] & \multicolumn{4}{c}{AAUW} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\\[-1.8ex] & 105th & 106th & 107th & 108th\\ 
 \hline \\[-1.8ex] 
  Number of female children & 1.028 & 0.578 & 1.600 & 1.322 \\ 
   & (1.392) & (1.420) & (1.333) & (1.427) \\ 
@@ -383,11 +371,11 @@ Adjusted R$^{2}$ & 0.828 & 0.801 & 0.855 & 0.847 \\
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
+\end{tabular}} 
 \end{table} 
 
 Add an interaction term between “girls” and political parties
-Similar to the previous extension, subset between democrats and republican has generated differential results in the impact of girls. Therefore, adding interaction term between girls and political parties may improve model by controlling the differential effect. Adjusted R squared were 0.828, 0.801, 0.855, and 0.847. The fitness of the model are exactly the same for both models. Therefore, both models are good to be used.
+Similar to the previous extension, subsetting between democrats and republican revealed that there may be differential results in the impact of girls based on party. Therefore, adding interaction term between girls and political parties may improve model by controlling the differential effect. Adjusted R squared were 0.828, 0.801, 0.855, and 0.847. The fitness of the model are exactly the same for both models. Therefore, both models are good to be used.
 
 Estimate for the interaction term were 2.652, 2.176, 1.729, and 1.888 for each respective congress. Each additional female child for republican legislator have higher AAUW score by according estimates. However, these estimates are not distinguishable from 0 given its significance is beyond 10 percent level.
 
